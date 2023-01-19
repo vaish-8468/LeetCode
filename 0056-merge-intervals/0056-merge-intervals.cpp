@@ -8,7 +8,7 @@ public:
         stack<vector<int>> st;
         sort(intervals.begin(),intervals.end(),comp);
         st.push(intervals[0]);
-        for(int i=0;i<intervals.size();i++){
+        for(int i=1;i<intervals.size();i++){
             vector<int> top=st.top();
             if(top[1]<intervals[i][0]){
                 st.push(intervals[i]);
