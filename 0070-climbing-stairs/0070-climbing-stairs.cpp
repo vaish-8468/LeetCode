@@ -2,7 +2,7 @@ class Solution {
 public:
     int climbStairs(int n) {
         int memo[n+2];
-        memset(memo,-1,sizeof(memo));
+        memset(memo,0,sizeof(memo));
         memo[1]=1;
         memo[2]=2;
         
