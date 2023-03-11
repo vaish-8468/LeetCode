@@ -5,6 +5,7 @@ public:
         int num=n;
         int sum=0;
         unordered_set<int> st;
+        //set count checks for the presence of a number in a set, if already present signifies inf loop
         while(num!=1 && !st.count(num)){
         st.insert(num);
         while(num>0){
@@ -15,6 +16,7 @@ public:
             sum=0;
         }
         return num==1;
+        //returns true if num==1
     }
 };
 
