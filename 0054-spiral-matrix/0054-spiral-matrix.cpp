@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        //simulation approach
         int m=matrix.size();
         int n=matrix[0].size();
         vector<vector<bool>> visited(m,vector<bool>(n,false));
