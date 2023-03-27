@@ -12,6 +12,7 @@ class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* dummy= new ListNode();
+        //it is necessary to declare a dummy variable as we cannot simply modify the original linked list directly
         dummy->next=head;
         ListNode* first=dummy;
         ListNode* second =dummy;
