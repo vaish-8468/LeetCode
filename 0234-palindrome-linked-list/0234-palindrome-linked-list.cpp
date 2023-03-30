@@ -25,25 +25,37 @@ public:
         
     }
     bool isPalindrome(ListNode* head) {
-       if(head == NULL || head->next == NULL){
-            return (head);
+        if(head == nullptr || head->next == nullptr){
+            return true;
         }
-        ListNode *r_head = NULL;
-        ListNode *ptr = head;
-        while(ptr!=NULL){
-            ListNode *temp = new ListNode(ptr->val);
-            temp ->next = r_head;
-            r_head = temp;
-            ptr = ptr->next;
+        ListNode* slow=head;
+        ListNode* fast=head;
+        
+        
+        //for finding the middle of the linked list
+        while(fast->next!=nullptr && fast->next->next!=nullptr){
+            //since we want the first middle of the linked list if hte no. of nodes are even
+            //and middle of the linked list if the no. of nodes are odd, hence fast becomes nullptr
+            fast=fast->next->next;
+            slow=slow->next;
+            
         }
-        while(head && r_head){
-            if(head->val != r_head->val){
+        
+        ListNode* dummy=head;
+        //reverse the half portion of the linked list
+        slow->next=reverse(slow->next);
+        slow=slow->next;
+        //traverse simultaneously and compare the values
+        while(slow!=nullptr){
+            if(slow->val!=dummy->val){
                 return false;
             }
-            head = head->next;
-            r_head = r_head->next;
+            dummy=dummy->next;
+            slow=slow->next;
         }
         return true;
+        
+        
     }
 };
 
