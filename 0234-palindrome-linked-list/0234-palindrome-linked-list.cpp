@@ -45,7 +45,7 @@ public:
         ListNode* dummy=head;
         //reverse the half portion of the linked list
         slow=reverse(slow->next);
-        // slow=slow->next;
+        
         //traverse simultaneously and compare the values
         while(slow!=nullptr){
             if(slow->val!=dummy->val){
