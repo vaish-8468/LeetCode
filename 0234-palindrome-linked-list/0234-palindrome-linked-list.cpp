@@ -36,15 +36,16 @@ public:
         while(fast->next!=nullptr && fast->next->next!=nullptr){
             //since we want the first middle of the linked list if hte no. of nodes are even
             //and middle of the linked list if the no. of nodes are odd, hence fast becomes nullptr
-            fast=fast->next->next;
             slow=slow->next;
+            fast=fast->next->next;
+            
             
         }
         
         ListNode* dummy=head;
         //reverse the half portion of the linked list
-        slow->next=reverse(slow->next);
-        slow=slow->next;
+        slow=reverse(slow->next);
+        // slow=slow->next;
         //traverse simultaneously and compare the values
         while(slow!=nullptr){
             if(slow->val!=dummy->val){
