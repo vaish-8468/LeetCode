@@ -35,7 +35,7 @@ public:
                 current->next=next->next;
                 next->next=prev->next;
                 prev->next=next;
-                next=current->next;
+                next=current->next; //important
                 j++;
         
             }
