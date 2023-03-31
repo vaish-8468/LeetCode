@@ -17,7 +17,7 @@ public:
         ListNode* temp=head;
         int count=1;
         while(temp->next!=nullptr){
-            ++count;
+            count++;
             temp=temp->next;
         }
         //connect the last node to the first node such that a circular linked list is created
