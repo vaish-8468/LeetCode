@@ -1,7 +1,7 @@
 class Solution {
 public:
     int findContentChildren(vector<int>& g, vector<int>& s) {
-        sort(g.begin(),g.end());
+        sort(g.begin(),g.end()); //greedy approach, sort in ascending order so as to increse the count by minimumizing the consumption
         sort(s.begin(),s.end());
         int count=0;
         int j=0,i=0;
