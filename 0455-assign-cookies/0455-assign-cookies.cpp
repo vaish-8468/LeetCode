@@ -4,19 +4,19 @@ public:
         sort(g.begin(),g.end());
         sort(s.begin(),s.end());
         int count=0;
-        int n=g.size();
-        int j;
-        for(int i=0;i<n;i++){
-            j=0;
-            while(j<s.size()){
+        int j=0,i=0;
+        while(i<g.size() && j<s.size()){
                 if(s[j]>=g[i]){
                     count++;
                     s[j]=0;
-                    break;
+                    i++;
+                    j++; //increment both i and j since one child can have atmost 1 cookie and the assigned cookie cannot be given to somebody else
                 }
-                j++;
+            else{
+                j++;  //keep incrementing the cookie if s[j]<g[i] i.e size of cookie is less than the min capacity of the child
             }
+            
         }
-        return count;
+        return count;  //TC=O(max(g.size(),s.size()))
     }
 };
