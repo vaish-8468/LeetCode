@@ -25,9 +25,6 @@ public:
         vector<vector<string>> ans;
         string ss(n,'.');
         vector<string> v(n,ss);
-        // for(int i=0;i<n;i++){
-        //     v[i]=ss;
-        // }
         vector<bool> top_left(2*n-1,false), left(n,false),bottom_left(2*n-1,false);
         find(0,v,ans,top_left,left,bottom_left,n);
         return ans;
