@@ -20,6 +20,7 @@ public:
         for(auto it : mp){
             if(it.second==0){
                 ans.push_back(it.first);
+                //selects the nodes with indegree 0
             }
         }
         return ans;
