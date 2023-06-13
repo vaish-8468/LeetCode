@@ -29,3 +29,6 @@ public:
         return count;
     }
 };
+
+// TC=O(n+n^2)=O(n^2)
+// SC=O(n+n)=O(n)
