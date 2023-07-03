@@ -7,7 +7,7 @@ public:
                 mp[ch]=1;
             }
             else{
-                return true;
+                return true; //if freq of any char is more than 1, then duplicate exists
             }
         }
         return false;
