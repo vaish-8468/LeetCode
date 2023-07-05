@@ -16,7 +16,6 @@ public:
                 while(j>-1){
                     if(nums[j]==0){
                         left=j;
-                        cout<<left<<" ";
                         break;
                     }
                     j--;
@@ -24,14 +23,13 @@ public:
                 while(k<nums.size()){
                     if(nums[k]==0){
                         right=k;
-                        cout<<right;
                         break;
                     }
                     k++;
                 }
                 ans=max((i-left-1)+(right-i-1),ans);
                 flag=true;
-                cout<<endl;
+    
             }
         }
         
