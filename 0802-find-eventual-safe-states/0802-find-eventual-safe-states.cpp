@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //https://www.youtube.com/watch?v=k8LBJqGLLQE
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
         int n=graph.size();
         
