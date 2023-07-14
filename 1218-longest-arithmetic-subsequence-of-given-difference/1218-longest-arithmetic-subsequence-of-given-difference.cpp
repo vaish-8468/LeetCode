@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestSubsequence(vector<int>& arr, int difference) {
-        map<int,int> mp; //to keep a record of the previous elements of ith index which have contributed to the subsequence of common difference 
+        unordered_map<int,int> mp; //to keep a record of the previous elements of ith index which have contributed to the subsequence of common difference 
         
         //{ith element: ;length of subsequence till ith element}
         int n=arr.size();
