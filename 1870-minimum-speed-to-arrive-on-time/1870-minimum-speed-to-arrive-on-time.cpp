@@ -21,7 +21,7 @@ public:
             res+=((double)dist[i]/(double)mid);
             
             if(res<=hour){
-                //there's possibility of minimizing the speed
+                //implies mid could be the answer but there's possibility of minimizing the speed
                 ans=mid;
                 right=mid-1;
             }
