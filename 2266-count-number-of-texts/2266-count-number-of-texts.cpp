@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //youtube.com/watch?v=vgnhZzw-kfU
     int countTexts(string pressedkeys) {
         int n=pressedkeys.length();
         vector<int> dp(n+1,0);//since we'll be judging till the length of the string and one additional space is required for 0th index
