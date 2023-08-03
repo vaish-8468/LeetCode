@@ -18,13 +18,13 @@ public:
             dp[i]=(dp[i]+dp[i-2])%mod;//ways of upto second index will also be counted
             }
             else{
-                continue; //otherwise move over to the next index
+                continue; //otherwise move over to the next previous index
             }
             if(i>=3 && pressedkeys[i-3]==ch){
                 dp[i]=(dp[i]+dp[i-3])%mod; //ways of upto third index will also be counted
             }
             else{
-                continue; //otherwise move over to the ext index
+                continue; //otherwise move over to the next previous index
             }
             if( (ch=='7' || ch=='9') && i>=4  && pressedkeys[i-4]==ch){
                 dp[i]=(dp[i]+dp[i-4])%mod; //since there are four letters for 7 and 9
