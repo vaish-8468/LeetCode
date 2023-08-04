@@ -15,6 +15,7 @@ public:
     TreeNode* lastRightInLeftSubtree(TreeNode* root){
         if(root->right==nullptr){
             return root;
+            //base case whej we reach the leaf node
         }
         return lastRightInLeftSubtree(root->right);
     }
