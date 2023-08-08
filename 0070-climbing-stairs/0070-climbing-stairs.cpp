@@ -1,17 +1,14 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        int memo[n+2];
-        memset(memo,0,sizeof(memo));
-        memo[1]=1;
-        memo[2]=2;
+        vector<int> dp(n+1,0);
+        dp[0]=1; //only one way possible
+        dp[1]=1; //again one way possible
         
-        for(int i=3; i<=n;i++){
-        
-        memo[i]=memo[i-1]+memo[i-2];
-    
+        for(int i=2;i<=n;i++){
+            dp[i]=dp[i-1]+dp[i-2]; //since last two indexes will also contribute in determining the number of ways
         }
-        return  memo[n];
         
+        return dp[n];
     }
 };
