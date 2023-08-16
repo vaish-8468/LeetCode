@@ -20,6 +20,8 @@ public:
         }
         // to make the whole string palindromic we have  to insert the non-palindromic elemnts
         //the min number of operations reuquired will be the count of those elements
+        
+        //max number will be the length of the original string since whole string can be copied in reverse manner and concatenated with the original string
         int minSteps=n-dp[n][n];
         
         return minSteps;
