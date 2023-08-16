@@ -2,6 +2,7 @@ class Solution {
 public:
     int longestPalindromeSubseq(string s) {
         int n=s.length();
+        //same ques as that of LCSubseq, just traverse the given string in reverse order for the case of string 2
         vector<vector<int>> dp(n+1,vector<int>(n+1,0));
         
         for(int i=1;i<=n;i++){
