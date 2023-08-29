@@ -21,6 +21,7 @@ class UnionSet{
         int rootY=find(y);
         
         if(rootX==rootY){
+            //cycle found
             return false;
         }
         root[rootX]=rootY;
