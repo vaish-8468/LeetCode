@@ -48,6 +48,8 @@ public:
         });
         
         UnionSet set_(n);
+        //corner case
+        //for keeping a record of the connected components, we can initialize edge variable with n-1 since for a connected graph with n nodes , it contains n-1 edges, hence if all the edges have been utilized that means all the nodes have been connected
         int edges=n-1;
         int ans=-1;
         for(int i=0;i<logs.size();i++){
@@ -56,6 +58,7 @@ public:
             
             if(!set_.connected(u,v)){
                 set_.Union(u,v);
+                //update ans only when two new components are united
                 ans=logs[i][0];
                 edges--;
             }
