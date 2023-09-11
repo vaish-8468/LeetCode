@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> groupThePeople(vector<int>& groupSizes) {
-        vector<vector<int>> d={{0,5},{1},{2,3,4}};
         vector<pair<int,int>> mp;
         vector<vector<int>> ans;
         for(int i=0;i<groupSizes.size();i++){
