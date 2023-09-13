@@ -8,28 +8,11 @@ public:
         
         //for every child, check it's neighbour
         
-//         for(int i=1;i<n-1;i++){
-//             if(ratings[i-1]>ratings[i] && candies[i-1]==1){
-//                 candies[i-1]=max(candies[i]+1,candies[i-1]+1);
-                
-//             }
-//             else if(ratings[i-1]<ratings[i] && candies[i]==1){
-//                 candies[i]=candies[i-1]+1;
-                
-//             }
-            
-//             if(ratings[i]<ratings[i+1] && candies[i+1]==1){
-//                 candies[i+1]=candies[i]+1;
-                
-//             }
-//             else if(ratings[i]>ratings[i+1] && candies[i]==1){
-//                 candies[i]=candies[i+1]+1;
-                
-//             }
-//         }
+
         
         for(int i=1;i<n;i++){
             if(ratings[i]>ratings[i-1]){
+                //store the maximum candy that can be collected if ith rating is greater than i-1th rating
                 candies[i]=max(candies[i], candies[i-1]+1);
                  
             }
@@ -37,12 +20,17 @@ public:
         }
         
         for(int i=n-2;i>=0;i--){
+            //traverse from right to left,
+            //again, collect the maximum possible candy for each ith rating greater than i+1th rating
             if(ratings[i]>ratings[i+1]){
                 candies[i]=max(candies[i], candies[i+1]+1);
             }
            
         }
         
+        //logic used is, total min candies will sum of maximum possible candies for each child
+        
+        //calculate total candies collected
         for(int i=0;i<n;i++){
             res+=candies[i];
         }
