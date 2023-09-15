@@ -62,7 +62,7 @@
 //                 int y=points[j][1];
 //                 //key->index, x, y
 //                 //vector-> index, u, v, dist
-//                 int dist=abs(u-x)+abs(v-y);
+//                 int dist=abs(x-u)+abs(y-v);
 //                  adj[{i,u,v}].push_back({j,x,y,dist});
 //                 adj[{j,x,y}].push_back({i,u,v,dist});
 //             }
@@ -90,48 +90,6 @@
 //         return cost;
         
         
-//     }
-// };
-
-// class UnionFind {
-// public:
-//     vector<int> group;
-//     vector<int> rank;
-
-//     UnionFind(int size) {
-//         group = vector<int>(size);
-//         rank = vector<int>(size);
-//         for (int i = 0; i < size; ++i) {
-//             group[i] = i;
-//         }
-//     }
-
-//     int find(int node) {
-//         if (group[node] != node) {
-//             group[node] = find(group[node]);
-//         }
-//         return group[node];
-//     }
-
-//     bool join(int node1, int node2) {
-//         int group1 = find(node1);
-//         int group2 = find(node2);
-        
-//         // node1 and node2 already belong to same group.
-//         if (group1 == group2) {
-//             return false;
-//         }
-
-//         if (rank[group1] > rank[group2]) {
-//             group[group2] = group1;
-//         } else if (rank[group1] < rank[group2]) {
-//             group[group1] = group2;
-//         } else {
-//             group[group1] = group2;
-//             rank[group2] += 1;
-//         }
-
-//         return true;
 //     }
 // };
 
