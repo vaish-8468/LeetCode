@@ -69,6 +69,9 @@ public:
         // the above approach will be applied for every ith index upto n
         //store the triplet in the vector
         
+        //TC=O(nlogn+(n*n))  //sorting+(for*while) worst case
+        //SC=O(no.of triplets) it's not the extra space but the space for returniing the answer
+        
         vector<vector<int>> ans;
         int n=nums.size();
         //sort the vector
