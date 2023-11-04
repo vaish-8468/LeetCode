@@ -26,6 +26,7 @@ public:
         }
     }
     int totalNQueens(int n) {
+        //set of vectors have been used here in order to avoid duplicates
         set<vector<string>> ans;
         string s(n,'.');
         vector<string> board(n,s);
