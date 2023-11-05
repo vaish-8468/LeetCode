@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    
+    /***
     
     //BRUTE FORCE
     //for every node, calculate the avg of it's subtree and 
@@ -49,9 +49,39 @@ public:
         preOrder(root);
         return res;
     }
+    ***/
     
-    
-//     int averageOfSubtree(TreeNode* root){
+    //OPTIMISED APPROACH
+    //TC=O(N) since every node is being visited only once
+    int res=0;
+    pair<int,int> calcAvg(TreeNode* root){
+        if(root==nullptr){
+            return{0,0};
+            
+        }
+        //postOrder traversal
+        auto leftS=calcAvg(root->left);
+        auto rightS=calcAvg(root->right);
         
-//     }
+        //calculate sum of the subtree
+        int sum=leftS.first+rightS.first+root->val;
+        //count the number of nodes in the subtree
+        int count=leftS.second+rightS.second+1;
+        
+        int avg=sum/count;
+        //check if the avag calculated is equal to the node value
+        
+        if(avg==root->val){
+            res++;
+        }
+        
+        return {sum,count}; //return sum and cumber of nodes in the subtree
+    }
+    
+    int averageOfSubtree(TreeNode* root){
+        pair<int,int> values=calcAvg(root);
+        return res;
+        
+        
+    }
 };
