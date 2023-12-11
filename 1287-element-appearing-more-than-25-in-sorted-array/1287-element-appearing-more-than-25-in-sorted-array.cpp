@@ -19,3 +19,30 @@ public:
         return arr[n-1];
     }
 };
+
+//class Solution {
+// public:
+//     int findSpecialInteger(vector<int>& arr) {
+//         int n = arr.size();
+//         vector<int> candidates = {arr[n / 4], arr[n / 2], arr[3 * n / 4]};
+//         int target = n / 4;
+        
+//         for (int candidate : candidates) {
+//             int left = lower_bound(arr.begin(), arr.end(), candidate) - arr.begin();
+//             int right = upper_bound(arr.begin(), arr.end(), candidate) - arr.begin() - 1;
+//             if (right - left + 1 > target) {
+//                 return candidate;
+//             }
+//         }
+        
+//         return -1;
+//     }
+// };
+//Set n = arr.length.
+// Create the array candidates with elements arr[n / 4], arr[n / 2], arr[3 * n / 4].
+// Set target = n / 4.
+// For each candidate in candidates:
+// Calculate the leftmost index of candidate as left using binary search.
+// Calculate the rightmost index of candidate as right using binary search.
+// If right - left + 1 > target, return candidate.
+// The code should never reach this point since it's guaranteed an answer exists. Return anything.
