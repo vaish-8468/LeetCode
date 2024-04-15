@@ -13,19 +13,19 @@
 class Solution {
 public:
     int total=0;
-    void PostOrder(TreeNode* root, string num){
+    void PreOrder(TreeNode* root, string num){
         if(root==nullptr){
             return;
         }
         
         num+=to_string(root->val);
         // PostOrder(root->left,num+=to_string(root->val));
-        PostOrder(root->left,num);
+        PreOrder(root->left,num);
 
         // num=num.substr(0,num.length()-1); //remove
         // PostOrder(root->right,num+=to_string(root->val));
         // num+=to_string(root->val);
-        PostOrder(root->right,num);
+        PreOrder(root->right,num);
 
         if(root->left==nullptr and root->right==nullptr){
             total+=stoi(num);
@@ -37,7 +37,7 @@ public:
         if(root->left==nullptr and root->right==nullptr){
             return root->val;
         }
-        PostOrder(root,"");
+        PreOrder(root,"");
         
         return total;
     }
