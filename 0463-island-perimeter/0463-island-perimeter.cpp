@@ -14,11 +14,15 @@ public:
                         int x=i+dx[k];
                         int y=j+dy[k];
                         if(x>-1 && x<m && y>-1 && y<n){
+                            //if the range is within the grid
+                            //consider only those sides of the block which has water
                             if(grid[x][y]==0){
                                 perimeter+=1;
                             }
                         }
                         else{
+                            //otherwise it will be all water around
+                            //hence consider its side for sure
                             perimeter+=1;
                         }
                     }
