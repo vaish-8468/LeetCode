@@ -6,6 +6,10 @@ public:
         int count=0;
         int n=rating.size();
         //i<j<k always
+        
+        
+        //TC=O(n^2)
+        //SC=O(1)
         for(int j=1;j<n-1;j++){
             int leftSmaller=0;
             int leftLarger=0;
